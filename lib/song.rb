@@ -28,14 +28,17 @@ attr_accessor :name, :artist, :genre
 
   def self.genre_count
      frequencies_one= Hash.new(0)
-    @@genres.each {|genre| frequencies[genre] +=1}
-    @@genres.uniq.each{|genre| puts "#{genre} #{frequencies[genre]}"}
+    @@genres.each {|genre| frequencies_one[genre] +=1}
+    frequencies_one
+    
+   
   end 
 
   def self.artist_count
     frequencies_two = Hash.new(0)
     @@artists.each {|artist| frequencies_two[artist] +=1}
-    @@artists.uniq.each{|artist| puts "#{artist} #{frequencies_two[artist]}"}
+    frequencies_two
+    
   end 
 
 end 
